@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\App;
 
 class index extends Controller
 {
@@ -22,9 +23,11 @@ class index extends Controller
 
     public function index(Request $request)
     {
+        echo App::getLocale();
         $u = $request->url();
         $now_basic_url = $this->giveHost($u);
-        return view('index');
+        $params = array('pagetype'=>'index', 'description'=>'Description', 'title'=>'title');
+        return view('indexuse', $params);
     }
 
 }
