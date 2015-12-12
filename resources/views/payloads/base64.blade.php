@@ -1,30 +1,57 @@
 @extends('index')
 @section('main_content')
-<h1> Base 64</h1>
-<p id="from">Text</p><button class="btn btn-default " type="submit"> </button><p id="to">Base64</p>
+<h1>{{$params->h1}}</h1>
+{!! $params->h1_text !!}
+<script>
+    function input_output_switch() {
+        var t = document.getElementById('input').value;
+        if (t!="") {
+            document.getElementById('input').value = document.getElementById('output').value;
+            document.getElementById('output').value = t;
+        }
+    }
 
-<form>
+    function h_switch(){
+        var value = document.getElementById("h_method").value;
+        if (value=="to_base64")
+        {
+            document.getElementById("h_method").value="to_text";
+            document.getElementById('from').innerHTML= "Base64";
+            document.getElementById('to').innerHTML= "Text";
+            input_output_switch();
+        }
+        else
+        {
+            document.getElementById("h_method").value="to_base64";
+            document.getElementById('from').innerHTML= "Text";
+            document.getElementById('to').innerHTML= "Base64";
+            input_output_switch();
+        }
 
-    <textarea class="form-control" placeholder="{{trans('base64.input_holder')}}" rows="6"></textarea>
+    }
+</script>
+<p id="from">Text</p><button class="btn btn-default " type="submit" onclick="h_switch();"> </button><p id="to">Base64</p>
 
-    <span>{{trans('base64.encode')}}</span>
+{!! Form::open(['route' => 'base64']) !!}
 
-    <select class="form-control type">
-        <option>UTF-8</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
+    <input id="h_method" type="hidden" name="method" value="to_base64">
+    <textarea id="input" class="form-control" name="source" placeholder="{{trans('base64.input_holder')}}" rows="6">{{isset($source) ? $source: ''}}</textarea>
+
+    <span>{{trans('base64.encoding')}}</span>
+    <select name="encoding_type" class="form-control type">
+        <option value="utf8" @if ( $encoding_type == 'utf8') selected @endif >UTF-8</option>
+        <option value="windows-1251" @if ( $encoding_type == 'windows-1251') selected @endif >windows-1251</option>
+        <option value="ascii" @if ( $encoding_type == 'ascii') selected @endif >ASCII</option>
     </select>
 
     <button class="btn btn-default clearfix" type="submit">{{trans('base64.button')}}</button>
 
-</form>
+{!! Form::close() !!}
 
-<textarea class="form-control" rows="8" placeholder="{{trans('base64.output_holder')}}"></textarea>
+<textarea id="output" class="form-control" rows="8" placeholder="{{trans('base64.output_holder')}}">{{isset($res) ? $res : ''}}</textarea>
 
-<h2>Seo text H2</h2>
-<p class="seo">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non nunc in ex suscipit cursus sit amet dapibus nunc. Quisque porttitor justo quis euismod dictum. Fusce in rhoncus ligula. Fusce scelerisque dolor sit amet dui porta hendrerit. Integer faucibus, neque sit amet tempor posuere, tortor ligula consequat metus, nec tempor ante ex egestas justo. Maecenas efficitur eleifend mi et lacinia. Suspendisse a nunc dui. Maecenas non nibh ut ante accumsan mattis ac eu nisi. Quisque quis felis sed tellus posuere porta a vel turpis. Mauris ut aliquam ligula, in fermentum justo. Phasellus faucibus dictum ante, id pharetra nisl tincidunt sed. Quisque sollicitudin rhoncus cursus.
-</p>
+<h2>{{$params->h2}}</h2>
+<div class="seo">
+    {!! $params->h2_text !!}
+</div>
 @stop

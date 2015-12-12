@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="converter-x">
+  <component name="PublishConfigData" serverName="http://converter-x.app:8000">
     <serverData>
-      <paths name="VPN">
+      <paths name="homestead_localhost">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>
-      <paths name="converter-x">
+      <paths name="http://converter-x.app:8000">
         <serverdata>
           <mappings>
             <mapping local="$PROJECT_DIR$" web="/" />

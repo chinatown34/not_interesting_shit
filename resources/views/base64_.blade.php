@@ -1,3 +1,4 @@
+@extends('indexuse')
 {!! Form::open(['route' => 'base64']) !!}
 {!! Form::textarea('source', $source) !!}
 {!! Form::hidden('method', 'encode') !!}

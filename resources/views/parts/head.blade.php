@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="{!! trans("$pagetype".'.descr') !!}">
+    <meta name="description" content="{!! $params->descr !!}">
 
     <link rel="alternate" hreflang="ru" href="http://m.порно-мама/">
     <link rel="canonical" hreflang="en" href="http://m.порно-мама.com/">
 
     <link rel="icon" href="{!! url() !!}/favicon.ico">
-    <title>{!! trans("$pagetype".'.title') !!}</title>
+    <title>{{$params->title}}</title>
     <link rel="stylesheet" type="text/css" href="{!! url() !!}/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{!! url() !!}/css/mycss.css">
 

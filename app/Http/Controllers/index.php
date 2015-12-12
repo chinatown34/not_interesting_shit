@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\App;
+use App\Texts;
+use App\functions;
 
 class index extends Controller
 {
@@ -15,19 +17,13 @@ class index extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    private function giveHost($host_with_subdomain) {
-        $array = explode(".", $host_with_subdomain);
 
-        return (array_key_exists(count($array) - 2, $array) ? $array[count($array) - 2] : "").".".$array[count($array) - 1];
-    }
 
-    public function index(Request $request)
+    public function index(Request $request, Texts $textsModel, functions $functions)
     {
-        echo App::getLocale();
-        $u = $request->url();
-        $now_basic_url = $this->giveHost($u);
-        $params = array('pagetype'=>'index', 'description'=>'Description', 'title'=>'title');
-        return view('indexuse', $params);
+        $langLinks = $functions->giveLangLinks($request->url());
+        $params = $textsModel->getLocaleOf('index');
+        return view('indexuse',['params' => $params, 'langLinks'=>$langLinks]);
     }
 
 }

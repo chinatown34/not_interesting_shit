@@ -3,10 +3,12 @@
     @include('parts.head')
 @stop
 @section('main_content')
-    @if ($pagetype == 'index')
-        выведу индекс
+    @if ($params->pagename == 'index')
+        @include('payloads.index')
+    @elseif ($params->pagename == 'base64')
+        @include('payloads.base64')
     @else
-        выведу базу
+        Нет такой странички
     @endif
 @stop
 @section('sidebar')
