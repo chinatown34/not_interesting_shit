@@ -15,7 +15,7 @@ class functions extends Model
 
     public function giveLangLinks($url)
     {
-        // Потом можно заменить на выборку из бд с кашированием
+        //Потом можно заменить на выборку из бд с кашированием
         $langs = array('ru'=>'ru','en'=>'');
 
         $main_domain = $this->giveHost($url);
