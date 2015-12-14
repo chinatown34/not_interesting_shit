@@ -106,3 +106,34 @@ footer {
 }
 #from, #to {font-weight: bold;}
 textarea.form-control {margin-bottom:1rem; }
+.player .social{
+	float:right;
+}
+.social a{
+	display:inline-block;
+	width:36px;
+	height:36px;
+	margin-top:0.5rem;
+	margin-bottom:0;
+}
+.social .ok{
+	background: url(../img/sotial/odnoklassniki.png) no-repeat;
+	background-size:contain;
+}
+.social .tw{
+	background: url(../img/sotial/tw.png) no-repeat;
+	background-size:contain;
+	margin-left:0.5rem;
+}
+.social .vk{
+	background: url(../img/sotial/vkontakte.png) no-repeat;
+	background-size:contain;
+}
+.social .fb{
+	background: url(../img/sotial/facebook.png) no-repeat;
+	background-size:contain;
+}
+.social .gp{
+	background: url(../img/sotial/google.png) no-repeat;
+	background-size:contain;
+}

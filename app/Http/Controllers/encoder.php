@@ -53,6 +53,17 @@ class encoder extends Controller
         $params = $textsModel->getLocaleOf('md5');
         return view('indexuse', ['params'=>$params, 'res'=>$res, 'source'=>$source, 'langLinks'=>$langLinks]);
     }
+    public function sha1(Request $request, Texts $textsModel, functions $functions)
+    {
+        $source = $request->input('source');
+        $res='';
+        if ($source!='') {
+            $res = sha1($source);
+        }
+        $langLinks = $functions->giveLangLinks($request->url());
+        $params = $textsModel->getLocaleOf('sha1');
+        return view('indexuse', ['params'=>$params, 'res'=>$res, 'source'=>$source, 'langLinks'=>$langLinks]);
+    }
 
 
 }

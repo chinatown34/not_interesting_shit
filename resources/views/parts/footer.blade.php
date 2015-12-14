@@ -17,4 +17,5 @@
         ga('send', 'pageview');
 
     </script>
+    <script src="{!! url() !!}/js/share.js"></script>
 </footer>

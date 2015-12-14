@@ -10,8 +10,8 @@
     <button class="btn btn-default clearfix" type="submit">{{trans('md5.button')}}</button>
 
     {!! Form::close() !!}
+    <input type="text" id="output" class="form-control" placeholder="{{trans('md5.output_holder')}}" value="{{isset($res) ? $res : ''}}">
 
-    <textarea id="output" class="form-control" rows="8" placeholder="{{trans('md5.output_holder')}}">{{isset($res) ? $res : ''}}</textarea>
 
     <h2>{{$params->h2}}</h2>
     <div class="seo">

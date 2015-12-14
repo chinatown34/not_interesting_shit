@@ -22,6 +22,10 @@ Route::match(['get', 'post'], '/base64', ['as' => 'base64', 'uses' => 'encoder@b
 Route::match(['get', 'post'], '/md5', ['as' => 'md5', 'uses' => 'encoder@md5', function()
 {
 }]);
+// Sha1
+Route::match(['get', 'post'], '/sha1', ['as' => 'sha1', 'uses' => 'encoder@sha1', function()
+{
+}]);
 $router->resource('texts', 'TextController');
 
 // Authentication routes...
