@@ -9,10 +9,10 @@ use App\Http\Controllers\Controller;
 use App\Texts;
 use App\functions;
 
-class base64 extends Controller
+class encoder extends Controller
 {
 
-    public function index(Request $request, Texts $textsModel, functions $functions)
+    public function base64(Request $request, Texts $textsModel, functions $functions)
     {
         $method = $request->input('method');
         $source = $request->input('source');
@@ -40,6 +40,18 @@ class base64 extends Controller
         $langLinks = $functions->giveLangLinks($request->url());
         $params = $textsModel->getLocaleOf('base64');
         return view('indexuse', ['params'=>$params, 'res'=>$res, 'source'=>$source, 'method'=>$method, 'encoding_type'=>$encoding_type, 'langLinks'=>$langLinks]);
+    }
+
+    public function md5(Request $request, Texts $textsModel, functions $functions)
+    {
+        $source = $request->input('source');
+        $res='';
+        if ($source!='') {
+            $res = md5($source);
+        }
+        $langLinks = $functions->giveLangLinks($request->url());
+        $params = $textsModel->getLocaleOf('md5');
+        return view('indexuse', ['params'=>$params, 'res'=>$res, 'source'=>$source, 'langLinks'=>$langLinks]);
     }
 
 

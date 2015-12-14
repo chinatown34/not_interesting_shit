@@ -15,7 +15,11 @@ Route::get('/', ['as' => 'index', 'uses' => 'index@index', function()
 {
 }]);
 // Base64
-Route::match(['get', 'post'], '/base64', ['as' => 'base64', 'uses' => 'base64@index', function()
+Route::match(['get', 'post'], '/base64', ['as' => 'base64', 'uses' => 'encoder@base64', function()
+{
+}]);
+// Md5
+Route::match(['get', 'post'], '/md5', ['as' => 'md5', 'uses' => 'encoder@md5', function()
 {
 }]);
 $router->resource('texts', 'TextController');

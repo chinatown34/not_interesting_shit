@@ -4,8 +4,8 @@
 <section>
     <p>{{trans('main.services')}}</p>
     <ul>
-        <li><a href="/">Converter-x.com</a></li>
-        <li><a href="/base64">Base64</a></li>
+        <li><a href="/base64">Base64 converter</a></li>
+        <li><a href="/md5">md5 online</a></li>
     </ul>
 
 </section>

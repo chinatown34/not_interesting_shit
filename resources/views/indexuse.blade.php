@@ -8,7 +8,7 @@
     @elseif ($params->pagename == 'base64')
         @include('payloads.base64')
     @else
-        Нет такой странички
+        @include("payloads.$params->pagename")
     @endif
 @stop
 @section('sidebar')
