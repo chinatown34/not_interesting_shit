@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Texts;
 use App\functions;
 
+
 class encoder extends Controller
 {
 
@@ -62,7 +63,8 @@ class encoder extends Controller
         }
         $langLinks = $functions->giveLangLinks($request->url());
         $params = $textsModel->getLocaleOf('sha1');
-        return view('indexuse', ['params'=>$params, 'res'=>$res, 'source'=>$source, 'langLinks'=>$langLinks]);
+        echo App::getLocale();
+       // return view('indexuse', ['params'=>$params, 'res'=>$res, 'source'=>$source, 'langLinks'=>$langLinks]);
     }
 
 

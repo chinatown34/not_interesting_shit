@@ -7,8 +7,8 @@
 
     <meta name="description" content="{!! $params->descr !!}">
 
-    <link rel="alternate" hreflang="ru" href="http://m.порно-мама/">
-    <link rel="canonical" hreflang="en" href="http://m.порно-мама.com/">
+    <link rel="alternate" hreflang="ru" href="http://ru.converter-x.com/">
+    <link rel="canonical" hreflang="en" href="http://converter-x.com/">
 
     <link rel="icon" href="{!! url() !!}/favicon.ico">
     <title>{{$params->title}}</title>

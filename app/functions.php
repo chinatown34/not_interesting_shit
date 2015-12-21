@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\App;
 
 class functions extends Model
 {
@@ -37,5 +38,7 @@ class functions extends Model
         //print_r($result);
         return $result;
     }
+
+
 
 }

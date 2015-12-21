@@ -3,5 +3,5 @@ return [
     'button' => 'Получить хеш!',
     'input_holder' => 'Введите свои данные тут!',
     'output_holder'=> 'Sha1 строка будет тут...',
-    'menu_name'=>'Md5 онлайн калькулятор',
+    'menu_name'=>'Sha1git  онлайн калькулятор',
 ];

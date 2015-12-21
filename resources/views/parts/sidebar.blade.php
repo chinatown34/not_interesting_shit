@@ -20,4 +20,14 @@
 </section>
 <section>
     <p>{{trans('main.ad')}}</p>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Green converter-x -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-2792539324244973"
+         data-ad-slot="5543760647"
+         data-ad-format="auto"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
 </section>
