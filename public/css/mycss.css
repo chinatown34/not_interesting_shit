@@ -36,6 +36,9 @@ html{
 	display:inline-block;
 	width:auto;
 }
+.main {
+	margin-top:0.8rem;
+}
 .main > form > .btn:last-child{
 	display:block;
 	width:100%;
