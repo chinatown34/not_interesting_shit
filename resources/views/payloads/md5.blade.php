@@ -1,8 +1,5 @@
 @extends('index')
 @section('main_content')
-    <h1>{{$params->h1}}</h1>
-    {!! $params->h1_text !!}
-    <br>
     <p id="from">Text</p><p id="to">to Md5</p>
     {!! Form::open(['route' => 'md5']) !!}
     <input id="h_method" type="hidden" name="method" value="to_md5">
@@ -12,7 +9,8 @@
     {!! Form::close() !!}
     <input type="text" id="output" class="form-control" placeholder="{{trans('md5.output_holder')}}" value="{{isset($res) ? $res : ''}}">
 
-
+    <h1>{{$params->h1}}</h1>
+    {!! $params->h1_text !!}
     <h2>{{$params->h2}}</h2>
     <div class="seo">
         {!! $params->h2_text !!}

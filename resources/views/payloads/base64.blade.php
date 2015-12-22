@@ -1,8 +1,6 @@
 @extends('index')
 @section('main_content')
-<h1>{{$params->h1}}</h1>
-{!! $params->h1_text !!}
-<script>
+    <script>
     function input_output_switch() {
         var t = document.getElementById('input').value;
         if (t!="") {
@@ -49,7 +47,8 @@
 {!! Form::close() !!}
 
 <textarea id="output" class="form-control" rows="8" placeholder="{{trans('base64.output_holder')}}">{{isset($res) ? $res : ''}}</textarea>
-
+    <h1>{{$params->h1}}</h1>
+    {!! $params->h1_text !!}
 <h2>{{$params->h2}}</h2>
 <div class="seo">
     {!! $params->h2_text !!}
