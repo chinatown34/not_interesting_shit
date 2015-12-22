@@ -15,6 +15,7 @@
         <li><a href="/base64">{{trans('base64.menu_name')}}</a></li>
         <li><a href="/md5">{{trans('md5.menu_name')}}</a></li>
         <li><a href="/sha1">{{trans('sha1.menu_name')}}</a></li>
+        <li><a href="/punycode">{{trans('punicode.menu_name')}}</a></li>
     </ul>
 
 </section>

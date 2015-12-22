@@ -26,6 +26,10 @@ Route::match(['get', 'post'], '/md5', ['as' => 'md5', 'uses' => 'encoder@md5', f
 Route::match(['get', 'post'], '/sha1', ['as' => 'sha1', 'uses' => 'encoder@sha1', function()
 {
 }]);
+// Punicode
+Route::match(['get', 'post'], '/punycode', ['as' => 'sha1', 'uses' => 'encoder@punycode', function()
+{
+}]);
 $router->resource('texts', 'TextController');
 
 // Authentication routes...

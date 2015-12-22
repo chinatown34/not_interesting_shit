@@ -18,7 +18,7 @@
             document.getElementById('to').innerHTML= "Text";
             input_output_switch();
         }
-        else
+        if (value=="to_text")
         {
             document.getElementById("h_method").value="to_base64";
             document.getElementById('from').innerHTML= "Text";
@@ -28,11 +28,15 @@
 
     }
 </script>
+    @if($method=='to_base64')
 <p id="from">Text</p><button class="btn btn-default " type="submit" onclick="h_switch();"> </button><p id="to">Base64</p>
+@else
+        <p id="from">Base64</p><button class="btn btn-default " type="submit" onclick="h_switch();"> </button><p id="to">Text</p>
+        @endif
 
 {!! Form::open(['route' => 'base64']) !!}
 
-    <input id="h_method" type="hidden" name="method" value="to_base64">
+    <input id="h_method" type="hidden" name="method" value="{{$method}}">
     <textarea id="input" class="form-control" name="source" placeholder="{{trans('base64.input_holder')}}" rows="6">{{isset($source) ? $source: ''}}</textarea>
 
     <span>{{trans('base64.encoding')}}</span>
