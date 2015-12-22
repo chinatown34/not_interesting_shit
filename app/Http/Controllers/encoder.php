@@ -63,8 +63,20 @@ class encoder extends Controller
         }
         $langLinks = $functions->giveLangLinks($request->url());
         $params = $textsModel->getLocaleOf('sha1');
-        echo App::getLocale();
-       // return view('indexuse', ['params'=>$params, 'res'=>$res, 'source'=>$source, 'langLinks'=>$langLinks]);
+        //echo App::getLocale();
+        return view('indexuse', ['params'=>$params, 'res'=>$res, 'source'=>$source, 'langLinks'=>$langLinks]);
+    }
+    public function punicode(Request $request, Texts $textsModel, functions $functions)
+    {
+        $source = $request->input('source');
+        $res='';
+        if ($source!='') {
+            $res = sha1($source);
+        }
+        $langLinks = $functions->giveLangLinks($request->url());
+        $params = $textsModel->getLocaleOf('sha1');
+        //echo App::getLocale();
+        return view('indexuse', ['params'=>$params, 'res'=>$res, 'source'=>$source, 'langLinks'=>$langLinks]);
     }
 
 
