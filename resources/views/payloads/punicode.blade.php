@@ -34,7 +34,7 @@
         <p id="from">Punycode</p><button class="btn btn-default " type="submit" onclick="h_switch();"> </button><p id="to">Text</p>
     @endif
 
-    {!! Form::open(['route' => 'base64']) !!}
+    {!! Form::open(['route' => 'punycode']) !!}
 
     <input id="h_method" type="hidden" name="method" value="{{$method}}">
     <textarea id="input" class="form-control" name="source" placeholder="{{trans('punicode.input_holder')}}" rows="6">{{isset($source) ? $source: ''}}</textarea>

@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Texts;
 use App\functions;
+use TrueBV\Punycode;
+
 
 
 class encoder extends Controller
@@ -69,15 +71,15 @@ class encoder extends Controller
     }
     public function punycode(Request $request, Texts $textsModel, functions $functions)
     {
+        $Punycode = new Punycode();
         $method = $request->input('method');
         $source = $request->input('source');
         if ($method=='') $method='to_puny';
         if ($method=="to_puny") {
-
-            $res = base64_encode($source);
+            $res = $Punycode->encode($source);
         }
         else {
-            $res = base64_decode($source);
+            $res = $Punycode->decode($source);
         }
         $langLinks = $functions->giveLangLinks($request->url());
         $params = $textsModel->getLocaleOf('punicode');

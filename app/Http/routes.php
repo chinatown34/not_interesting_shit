@@ -27,7 +27,7 @@ Route::match(['get', 'post'], '/sha1', ['as' => 'sha1', 'uses' => 'encoder@sha1'
 {
 }]);
 // Punicode
-Route::match(['get', 'post'], '/punycode', ['as' => 'sha1', 'uses' => 'encoder@punycode', function()
+Route::match(['get', 'post'], '/punycode', ['as' => 'punycode', 'uses' => 'encoder@punycode', function()
 {
 }]);
 $router->resource('texts', 'TextController');
